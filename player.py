@@ -3,14 +3,15 @@
 import pygame
 pygame.init()
 
-class Player():
-	def __init__(self, x,y,width,height,color):
+
+class Player:
+	def __init__(self, x, y, width, height, color):
 		self.x = x
 		self.y = y
 		self.width = width
 		self.height = height
 		self.color = color
-		self.rect = (x,y,width,height)
+		self.rect = (x, y, width, height)
 		self.vel = 3
 
 	def draw(self, win):
@@ -33,6 +34,4 @@ class Player():
 		self.update()
 
 	def update(self):
-		self.rect = (self.x,self.y,self.width,self.height) 
-
-
+		self.rect = (self.x, self.y, self.width, self.height)
