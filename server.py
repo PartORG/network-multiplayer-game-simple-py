@@ -1,8 +1,9 @@
 # SERVER
 import socket
-from _thread import *
-from player import Player
 import pickle
+
+from _thread import start_new_thread
+from player import Player
 
 server = "localhost"
 port = 5555
@@ -46,10 +47,15 @@ def threaded_client(conn, player):
 	conn.close()
 
 
-currentPlayer = 0
-while True:
-	conn, addr = s.accept()
-	print("Connected to:", addr)
+def main():
+	current_player = 0
+	while True:
+		conn, addr = s.accept()
+		print("Connected to:", addr)
 
-	start_new_thread(threaded_client, (conn, currentPlayer))
-	currentPlayer += 1
+		start_new_thread(threaded_client, (conn, current_player))
+		current_player += 1
+
+
+if __name__ == "__main__":
+	main()
