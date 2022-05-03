@@ -12,9 +12,9 @@ win = pygame.display.set_mode((width, height))
 pygame.display.set_caption("Client")
 
 
-def read_pos(str):
-	str = str.split(",")
-	return int(str[0]), int(str[1])
+def read_pos(pos):
+	pos = str.split(",")
+	return int(pos[0]), int(pos[1])
 
 
 def make_pos(tup):
@@ -31,7 +31,7 @@ def redraw_window(win, player, player2):
 def main():
 	run = True
 	n = Network()
-	p = n.getP()
+	p = n.get_p()
 	clock = pygame.time.Clock()
 
 	while run:
